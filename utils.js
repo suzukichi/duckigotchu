@@ -242,8 +242,8 @@ export function loadGameData(game, global = true) {
 			// Load global settings
 			const savedGlobalData = popSavedData(globalStorageKey);
 
-			game.borderNum = savedGlobalData.borderNum;
-			game.isMuted = savedGlobalData.isMuted;
+			game.borderNum = savedGlobalData.borderNum || 0;
+			game.isMuted = !!savedGlobalData.isMuted;
 			game.sound.mute = game.isMuted;
 		} else {
 			// Load duck info
