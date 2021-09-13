@@ -47,7 +47,7 @@ export default class TamaScene extends Phaser.Scene {
 	    this.sound.pauseOnBlur = false;
 
 		let duckVariations = duckInfo[this.duckType];
-		let info = duckVariations[Math.min(this.level, duckVariations.length)];
+		let info = duckVariations[Math.min(this.level, duckVariations.length -1)];
 
 	    this.duckSprite = this.add.sprite(gameWidth / 2, DUCK_Y, info.spritesheet);
 						
@@ -375,7 +375,7 @@ export default class TamaScene extends Phaser.Scene {
 		}
 		
 		let duckVariations = duckInfo[this.duckType];
-		let info = duckVariations[Math.min(this.level, duckVariations.length)];
+		let info = duckVariations[Math.min(this.level, duckVariations.length - 1)];
 		
 		this.duckWalk = this.anims.create({
 			key: 'duckWalk',
