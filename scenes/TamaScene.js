@@ -260,7 +260,7 @@ export default class TamaScene extends Phaser.Scene {
 			this.duckType = nextDuckVer;
 			this.loadDuckAnimations();
 			
-			this.duckSprite.play(`levelUp-${this.duckType}-${this.level}`);
+			this.duckSprite.play(`levelUp-${this.duckType}-${Math.min(this.level, duckInfo[this.duckType].length - 1)}`);
 			this.duckSprite.on('animationcomplete', function() {
 				this.lockActions = false;
 				this.moveDuck();
