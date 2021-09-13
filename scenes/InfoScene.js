@@ -20,7 +20,7 @@ export default class InfoScene extends Phaser.Scene {
 
 		let duckVariations = duckInfo[data.variation];
 		
-		let info = duckVariations[Math.min(data.level, duckVariations.length)];
+		let info = duckVariations[Math.min(data.level, duckVariations.length - 1)];
 		var img = this.add.sprite(gameWidth / 2 - 160, gameHeight / 2 - 8, 'statIcons', 0);
 		img.setFrame(info.icon);
 		img.setOrigin(0,0);
